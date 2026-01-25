@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: consumer
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: user
+    password: password
+    listener:
+      simple:
+        acknowledge-mode: manual
+        prefetch: 1
