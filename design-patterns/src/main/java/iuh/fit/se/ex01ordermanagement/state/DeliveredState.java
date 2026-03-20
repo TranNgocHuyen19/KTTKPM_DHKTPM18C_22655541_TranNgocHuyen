@@ -9,12 +9,11 @@ public class DeliveredState implements OrderState {
     @Override
     public void handle(OrderContext context) {
 
-        OrderStrategy strategy =
-                new LoggingDecorator(
-                        new DeliveredOrderStrategy()
-                );
+    OrderStrategy strategy =
+        new LoggingDecorator(
+            new DeliveredOrderStrategy()
+        );
 
-        strategy.execute();
-
+    strategy.execute();
     }
 }

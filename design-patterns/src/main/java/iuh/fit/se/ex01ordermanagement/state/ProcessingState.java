@@ -9,12 +9,12 @@ public class ProcessingState implements OrderState {
     @Override
     public void handle(OrderContext context) {
 
-        OrderStrategy strategy =
-                new LoggingDecorator(
-                        new ProcessingOrderStrategy()
-                );
+    OrderStrategy strategy =
+        new LoggingDecorator(
+            new ProcessingOrderStrategy()
+        );
 
-        strategy.execute();
+    strategy.execute();
 
         context.setState(new DeliveredState());
     }

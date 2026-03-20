@@ -9,14 +9,14 @@ public class NewState implements OrderState {
     @Override
     public void handle(OrderContext context) {
 
-        OrderStrategy strategy =
-                new LoggingDecorator(
-                        new ValidationDecorator(
-                                new NewOrderStrategy()
-                        )
-                );
+    OrderStrategy strategy =
+        new LoggingDecorator(
+            new ValidationDecorator(
+                new NewOrderStrategy()
+            )
+        );
 
-        strategy.execute();
+    strategy.execute();
 
         context.setState(new ProcessingState());
     }
